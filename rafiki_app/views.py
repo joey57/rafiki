@@ -51,7 +51,6 @@ def login_view(request):
             msg = 'error validating form'
     return render(request, 'login.html', {'form': form, 'msg': msg})
 
-
 def employer(request):
     return render(request,'employers/employer.html')
 
