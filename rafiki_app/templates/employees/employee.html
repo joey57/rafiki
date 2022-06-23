@@ -2,6 +2,7 @@
 {% load static %}
 {% load crispy_forms_tags %}
 {%block content%}
+
 <div class="container">
     <div class='content-section'>
         <div class="media">
@@ -21,15 +22,34 @@
                 <p class='text-secondary'><span style="color:red ;font-weight:bold" >Address: </span>{{ user.profile.address }}</p>
                 <p class='text-secondary'><span style="color:red ;font-weight:bold" >Location: </span>{{ user.profile.location }}</p>
                 <p class='text-secondary'><span style="color:red ;font-weight:bold" >Availability: </span>{{ user.profile.availability }}</p>
+<<<<<<< HEAD
                 <p class='text-secondary'><span style="color:red ;font-weight:bold" >Date_Joined: </span>{{ user.profile.date_joined }}</p>
                 <p class='text-secondary'><span style="color:red ;font-weight:bold" >Profile: </span>{{ user.profile.profile_category }}</p>
+=======
+
+                <p class='text-secondary'><span style="color:red ;font-weight:bold" >Date_Joined: </span>{{ user.profile.date_joined }}</p>
+                <p class='text-secondary'><span style="color:red ;font-weight:bold" >Profile: </span>{{ user.profile.profile_category }}</p>
+
+
+>>>>>>> 533ac4a21b46ed628a830103cb8601d4b2890f9a
                 {{ u_form|crispy }}
                 {{ p_form|crispy }}
             </fieldset>
             <div class='form-group'>
+<<<<<<< HEAD
                <a href="{% url 'update_profile' %}" ">update profile</a>
+=======
+
+               <a href="{% url 'update_profile' %}" ">update profile</a>
+
+>>>>>>> 533ac4a21b46ed628a830103cb8601d4b2890f9a
             </div>
         </form>
     </div>
 </div>
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 533ac4a21b46ed628a830103cb8601d4b2890f9a
 {%endblock content%}

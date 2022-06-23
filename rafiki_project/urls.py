@@ -14,9 +14,26 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+<<<<<<< HEAD
 from django.urls import path, include
+=======
+
+from django.urls import path,include
+from django.conf import settings
+from django.conf.urls.static import static
+
+
+>>>>>>> 533ac4a21b46ed628a830103cb8601d4b2890f9a
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('rafiki_app.urls')),
+<<<<<<< HEAD
 ] 
+=======
+]
+
+
+urlpatterns = urlpatterns+static(settings.MEDIA_URL,
+document_root=settings.MEDIA_ROOT)
+>>>>>>> 533ac4a21b46ed628a830103cb8601d4b2890f9a

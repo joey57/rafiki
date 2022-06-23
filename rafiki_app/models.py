@@ -2,6 +2,7 @@ from datetime import datetime
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
+
 # Create your models here.
 class User(AbstractUser):
     is_employer = models.BooleanField('Is customer', default=False)
@@ -34,8 +35,14 @@ class Profile(models.Model):
     location = models.CharField(max_length=50, blank=True)
     availability = models.BooleanField(null=True)
     profile_category = models.ForeignKey('Category',null=True, blank=True, on_delete=models.CASCADE)
+
     def save_profile(self):
         self.save()
+
+
+    def save_profile(self):
+        self.save()
+
     def save_image(self):
         self.save()
     def delete_image(self):
@@ -52,7 +59,6 @@ class Profile(models.Model):
     def get_profile_by_id(cls,id):
         profile = cls.objects.filter(id= id).all()
         return profile
-  
     @classmethod
     def filter_by_category(cls, profile_category):
         profile_category = cls.objects.filter(profile_category__id=profile_category)
@@ -64,3 +70,4 @@ class Profile(models.Model):
         profile = Profile.objects.filter(profile_category__name__icontains=profile_category)
         return profile 
     
+
