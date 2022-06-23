@@ -1,6 +1,8 @@
 {%extends 'base.html'%}
 {% load static %}
 {%block content%}
+{% include 'navbar.html' %}
+
 <h1 class="text-center"> hello {{ user.username }} you are an employer</h1>
 <div class="container">
   <h2 class="text-center">List of Employees</h2>
@@ -15,7 +17,7 @@
               <div class="card-content d-flex flex-column align-items-center">
                   <h4 class="pt-2">{{profile.user.username.capitalize}}</h4>
                   <h5>{{profile.profile_category}}</h5>
-                  <a href=" " class="btn btn-secondary mt-3 mt-md-4 px-4">More details</a>
+                  <a href="{% url 'public-profile' username=profile %} " class="btn btn-secondary mt-3 mt-md-4 px-4">More details</a>
 
                   <ul class="social-icons d-flex justify-content-center">
                       <li style="--i:1">

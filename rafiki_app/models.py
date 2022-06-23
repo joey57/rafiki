@@ -24,7 +24,7 @@ class Category(models.Model):
         return category
     def __str__(self):
         return self.name
-        
+
 class Profile(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE,related_name='profile')
     profile_picture = models.ImageField(upload_to = 'uploads/' ,default='default.jpg')
@@ -52,9 +52,15 @@ class Profile(models.Model):
     def get_profile_by_id(cls,id):
         profile = cls.objects.filter(id= id).all()
         return profile
+  
     @classmethod
     def filter_by_category(cls, profile_category):
         profile_category = cls.objects.filter(profile_category__id=profile_category)
         return profile_category
     def __str__(self):
         return self.user.username
+    @classmethod
+    def search_by_category(cls, profile_category):
+        profile = Profile.objects.filter(profile_category__name__icontains=profile_category)
+        return profile 
+    
